@@ -47,9 +47,9 @@ function Header() {
           }}
         >
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/home">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
