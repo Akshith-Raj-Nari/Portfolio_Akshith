@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App.jsx";
 import Error from "./Error.jsx";
 import Home from "./Home.jsx";
-// import About from "./components/About.jsx";
-// import Projects from "./components/Projects.jsx";
-// import Resume from "./components/Resume.jsx";
-// import Contact from "./components/Contact.jsx";
+import LandingPage from "./LandingPage.jsx";
+import App from "../App.jsx";
+import About from "./About.jsx";
+import Projects from "./Projects.jsx";
+import Resume from "./Resume.jsx";
+import Contact from "./Contact.jsx";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -13,25 +14,29 @@ const Router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
         path: "/home",
         element: <Home />,
       },
-      //   {
-      //     path: "/about",
-      //     element: <About />,
-      //   },
-      //   {
-      //     path: "/projects",
-      //     element: <Projects />,
-      //   },
-      //   {
-      //     path: "/resume",
-      //     element: <Resume />,
-      //   },
-      //   {
-      //     path: "/contact",
-      //     element: <Contact />,
-      //   },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
+        path: "/resume",
+        element: <Resume />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
     ],
   },
 ]);
