@@ -1,0 +1,25 @@
+{
+    "Projects":[
+        {
+            "id": 1,
+            "name": "XO-GAME-V1-p",
+            "description": "A simple game of tic-tac-toe",
+            "Tech": "HTML, CSS, JavaScript",
+            "url": "https://xo-game-v1-p.netlify.app/"
+        },
+        {
+            "id": 2,
+            "name": "To Do List",
+            "description": "A simple to do list",
+            "Tech": "React, CSS",
+            "url": "https://6776b28e97d6ea4795fb0c56--marvelous-mooncake-3eb234.netlify.app/"
+        },
+        {
+            "id": 3,
+            "name": "Simple Calculator",
+            "description": "A simple calculator",
+            "Tech": "HTML, CSS, JavaScript",
+            "url": ""
+        }
+    ]
+}
