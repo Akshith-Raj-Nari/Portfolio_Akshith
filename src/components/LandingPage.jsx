@@ -1,29 +1,36 @@
+import { useEffect } from "react";
+import "./LandingPage.css";
+
 function LandingPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const elements = document.querySelectorAll(".hidden");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <div
-      className="container"
-      style={{
-        marginTop: "30px",
-        padding: "30px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        backgroundColor: "gray",
-      }}
-    >
+    <div className="landing-container">
       <img
-        src="./profile.png"
-        alt="Akshith Raj Nari image"
-        style={{
-          marginRight: "15px",
-          width: "500px",
-          height: "500px",
-          borderRadius: "50%",
-        }}
+        src="./Profile.jpg"
+        alt="Akshith Raj Nari"
+        className="profile-image"
       />
-      <h1 className="display-2">Hi! This is Akshith Raj Nari</h1>
-      <h2 className="display-6">
+      <h1 className="display-2 hidden">Hi! This is Akshith Raj Nari</h1>
+      <h2 className="display-6 hidden">
         Intern at Accenture | Web Developer | Software Developer
       </h2>
     </div>

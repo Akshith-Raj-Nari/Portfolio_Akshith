@@ -1,0 +1,64 @@
+@keyframes bounceIn {
+    0% {
+      transform: translate(-100vw, -100vh) scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(20px, 20px) scale(1.2);
+      opacity: 1;
+    }
+    70% {
+      transform: translate(-10px, -10px) scale(0.9);
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .landing-container {
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(200, 235, 247);
+    min-height: 100vh;
+  }
+  
+  .profile-image {
+    margin-right: 15px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 1px solid black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    animation: bounceIn 1.5s ease-out;
+  }
+  
+  /* Initially hide name and titles */
+  .hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* When visible, apply fade-in animation */
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

@@ -12,7 +12,7 @@ function Header() {
         style={{ fontSize: "1.5em", fontWeight: "bold" }}
       >
         <img
-          src=".\profile.png"
+          src=".\Profile.jpg"
           alt="Profile Picture"
           style={{
             marginRight: "15px",
