@@ -23,7 +23,7 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="landing-container">
+    <div className="landing-container md sm">
       <img
         src="./Profile.jpg"
         alt="Akshith Raj Nari"
