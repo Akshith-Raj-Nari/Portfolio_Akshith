@@ -1,0 +1,189 @@
+/* Improved with chat-gtp only for css */
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Resume Container */
+  .resume {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Sidebar */
+  .side-bar {
+    background: #2c3e50;
+    color: white;
+    padding: 30px;
+    width: 30%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .side-bar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 15px;
+    animation: bounceIn 1.2s ease;
+  }
+  
+  .side-bar h1 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+  
+  .side-bar p {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  .side-bar a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .side-bar a:hover {
+    color: #16a085;
+  }
+  
+  /* Main Content */
+  .main-bar {
+    flex: 1;
+    padding: 40px;
+    width: 70%;
+  }
+  
+  .main-bar h1 {
+    font-size: 24px;
+    color: #34495e;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .main-bar h4 {
+    color: #2c3e50;
+    margin-top: 10px;
+  }
+  
+  .main-bar p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Skills */
+  #skills-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #skills-list li {
+    background: #1abc9c;
+    color: white;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: transform 0.3s;
+  }
+  
+  #skills-list li:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .resume {
+      flex-direction: column;
+    }
+    .side-bar {
+      width: 100%;
+      padding: 20px;
+    }
+    .main-bar {
+      width: 100%;
+      padding: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resume {
+      margin: 20px;
+    }
+    .side-bar img {
+      width: 120px;
+      height: 120px;
+    }
+    .side-bar h1 {
+      font-size: 18px;
+    }
+    .main-bar h1 {
+      font-size: 20px;
+    }
+    .main-bar p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .resume {
+      margin: 10px;
+    }
+    .side-bar img {
+      width: 100px;
+      height: 100px;
+    }
+    .side-bar p {
+      font-size: 12px;
+    }
+    .main-bar {
+      padding: 20px;
+    }
+    .main-bar h1 {
+      font-size: 18px;
+    }
+    ul li {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Home.css";
+import "./assets/css/Home.css";
 import Projects from "./Projects";
 import Resume from "./Resume";
 import Certificates from "./Certificates";

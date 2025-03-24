@@ -1,0 +1,84 @@
+/* Improved with chat-gtp only for css */
+
+.container-home {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+/* Card Styling */
+.card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Hover Effects */
+.card:hover {
+    box-shadow: 0px 8px 20px rgba(1, 1, 1, 0.3);
+    transform: scale(1.07);
+    cursor: pointer;
+}
+
+/* Card Image */
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 12px 12px 0 0;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* Card Text Animation */
+.card-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    text-transform: uppercase;
+    animation: fadeInText 1s ease-in-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) { /* Medium Devices (Tablets) */
+    .container-home {
+        justify-content: center; /* Center cards */
+    }
+    .card {
+        width: 14rem !important; /* Reduce card width */
+        margin: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) { /* Small Devices (Mobiles) */
+    .container-home {
+        justify-content: space-between; /* Spread out cards */
+        flex-wrap: nowrap; /* Prevent stacking */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        padding: 10px;
+        gap: 10px;
+    }
+    .card {
+        width: 12rem !important; /* Further reduce size */
+        margin: 8px;
+        flex-shrink: 0; /* Prevent cards from squishing */
+    }
+}

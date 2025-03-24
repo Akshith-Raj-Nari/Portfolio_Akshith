@@ -1,12 +1,64 @@
-# React + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the personal portfolio of Akshith Raj Nari. It showcases my projects, skills, and experiences.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Expanding the ESLint configuration
+## Introduction
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This portfolio is designed to provide an overview of my professional background, including my projects, skills, and experiences. It is built using modern web technologies and is fully responsive.
+
+## Features
+
+- Responsive design
+- Interactive navigation
+- Project showcase
+- Contact form
+
+## Technologies Used
+
+- React
+- Bootstrap
+- JavaScript
+- HTML
+- CSS
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd portfolio
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To start the development server, run:
+
+```bash
+npm start
+```
+
+## Contributing
+
+I used ChatGPT-4 to improve the responsiveness and animation of the CSS.
+
+All other files, except for the CSS files and this Readme file, were created by me.

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./LandingPage.css";
+import "./assets/css/LandingPage.css";
 
 function LandingPage() {
   useEffect(() => {

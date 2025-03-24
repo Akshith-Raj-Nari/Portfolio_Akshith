@@ -1,0 +1,77 @@
+/* Improved with chat-gtp only for css */
+/* General Container Styles */
+.container-x {
+  border-radius: 10px;
+  background: #f8f9fa;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.container-x:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Styling */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Font Sizes */
+.fs-4 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  transition: color 0.3s ease-in-out;
+}
+
+.fs-5 {
+  font-size: 20px;
+  color: #555;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Links Styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Row Animations */
+.row {
+  padding: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.row:hover {
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 5px;
+  padding: 12px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
