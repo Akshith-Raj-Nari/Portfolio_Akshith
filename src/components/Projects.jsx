@@ -1,5 +1,5 @@
 import data from "./assets/data.json";
-import "./assets/css/Projects.css";
+import "./assets/css/projects.css";
 
 function Projects() {
   return (
