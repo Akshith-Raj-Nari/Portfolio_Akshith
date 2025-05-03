@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./assets/css/Home.css";
 import Projects from "./Projects";
 import Resume from "./Resume";
-import Certificates from "./Certificates";
+import Canvas from "./Canvas";
 import Education from "./Education";
 
 function Home() {
@@ -59,11 +59,11 @@ function Home() {
           <img
             className="card-img-top"
             id="home-card-img"
-            src="./Certificate.png"
-            alt="Card image cap"
+            src="./Canvas.jpg"
+            alt="Canvas Image"
           />
           <div className="card-body">
-            <p className="card-text">CERTIFICATES</p>
+            <p className="card-text">CANVAS</p>
           </div>
         </div>
         <div
@@ -86,7 +86,7 @@ function Home() {
       <div className="container">
         {(selected === "PROJECTS" && <Projects />) ||
           (selected === "RESUME" && <Resume />) ||
-          (selected === "CERTIFICATES" && <Certificates />) ||
+          (selected === "CANVAS" && <Canvas />) ||
           (selected === "EDUCATION" && <Education />)}
       </div>
     </>
