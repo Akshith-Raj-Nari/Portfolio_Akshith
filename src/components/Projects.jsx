@@ -35,7 +35,12 @@ function Projects() {
                 <strong className="fs-4">LINK</strong>
               </div>
               <div className="col-6 col-md-8 col-lg-9 fs-5">
-                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="Project-Link"
+                >
                   {project.url && project.name}
                 </a>
               </div>

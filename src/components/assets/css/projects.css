@@ -40,14 +40,14 @@
 }
 
 /* Links Styling */
-a {
+ .Project-Link {
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
-a:hover {
+.Project-Link:hover {
   color: #0056b3;
   text-decoration: underline;
 }
