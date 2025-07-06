@@ -1,12 +1,116 @@
+body {
+  background-color: #fdfcf7;
+  font-family: 'Patrick Hand', cursive;
+}
+
 .contact-card {
-    background: #fdf6e3;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1.5px 0 #ece2c6 inset;
-    background-image: 
-        url('https://img.freepik.com/free-photo/white-paper-texture_1194-2301.jpg?semt=ais_hybrid&w=740'),
-        repeating-linear-gradient(135deg, #f5ecd7 0px, #f5ecd7 4px, #fdf6e3 4px, #fdf6e3 12px);
-    background-size: cover, auto;
-    background-position: center, 0 0;
-    background-repeat: no-repeat, repeat;
-    border-radius: 8px;
-    border: 1px solid #ece2c6;
+  background: #fdf6e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1.5px 0 #ece2c6 inset;
+  background-image: 
+    url('https://img.freepik.com/free-photo/white-paper-texture_1194-2301.jpg?semt=ais_hybrid&w=740'),
+    repeating-linear-gradient(135deg, #f5ecd7 0px, #f5ecd7 4px, #fdf6e3 4px, #fdf6e3 12px);
+  background-size: cover, auto;
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
+  border-radius: 8px;
+  border: 1px solid #ece2c6;
+  padding: 30px;
+  max-width: 600px;
+  margin: 50px auto;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.contact-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4d3e26;
+  position: relative;
+}
+
+.contact-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #d6ba73;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #3e321c;
+}
+
+input,
+select,
+textarea {
+  background-color: #fffdf5;
+  border: 1px solid #d9cfa5;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Patrick Hand', cursive;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #c4b26e;
+  outline: none;
+  background-color: #fffbe6;
+}
+
+button {
+  background-color: #d6ba73;
+  color: #2f2f2f;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-family: 'Patrick Hand', cursive;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #bda45d;
+  color: white;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-card {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
 }

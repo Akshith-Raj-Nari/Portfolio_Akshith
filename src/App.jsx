@@ -8,6 +8,11 @@ function App() {
     <div className="main">
       <Header />
       <Outlet />
+      <footer className="text-center text-lg-start bg-light text-muted">
+        <div className="text-center p-4">
+          © 2025 Akshith Raj Nari. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }

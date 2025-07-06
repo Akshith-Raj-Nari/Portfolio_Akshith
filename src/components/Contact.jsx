@@ -1,3 +1,4 @@
+// Contact.jsx
 import React, { useState } from "react";
 import "./assets/css/contact.css";
 
@@ -18,26 +19,17 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for your feedback! ");
+    alert("Thank you for your feedback!");
   };
 
   return (
-    <div
-      className="card contact-card"
-      style={{
-        padding: "20px",
-        maxWidth: "500px",
-        margin: "auto",
-        marginTop: "50px",
-      }}
-    >
-      <h1 className="display-4 text-center">Contact</h1>
+    <div className="card contact-card">
+      <h1 className="contact-title">Contact Me</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            className="form-control"
             id="name"
             name="name"
             value={name}
@@ -50,7 +42,6 @@ function Contact() {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            className="form-control"
             id="email"
             name="email"
             value={email}
@@ -62,7 +53,6 @@ function Contact() {
         <div className="form-group">
           <label htmlFor="rating">Rating</label>
           <select
-            className="form-control"
             id="rating"
             name="rating"
             value={rating}
@@ -76,19 +66,16 @@ function Contact() {
         <div className="form-group">
           <label htmlFor="feedback">Suggestions/Feedback</label>
           <textarea
-            className="form-control"
             id="feedback"
             name="feedback"
             rows="3"
             value={feedback}
             onChange={handleChange}
-            placeholder="Enter your feedback"
+            placeholder="Let us know what you think..."
           ></textarea>
         </div>
-        <div className="d-flex justify-content-end gap-2">
-          <button type="submit" className="btn btn-success">
-            Submit
-          </button>
+        <div className="form-submit">
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>
