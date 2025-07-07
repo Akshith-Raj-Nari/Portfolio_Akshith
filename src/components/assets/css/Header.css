@@ -1,0 +1,158 @@
+/* === Bootstrap Navbar Override === */
+.custom-navbar {
+  background-color: #e3f2fd;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem;
+}
+
+.profile-pic {
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* === Nav Container === */
+#navbarSupportedContent {
+  justify-content: center;
+}
+
+/* === Nav Menu Layout === */
+.nav-gradient-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 0;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* === Nav Item === */
+.nav-gradient-item {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+/* Hover Expand */
+.nav-gradient-item:hover {
+  width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+/* Gradient Background & Glow */
+.nav-gradient-item::before,
+.nav-gradient-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  transition: 0.5s;
+}
+
+.nav-gradient-item::before {
+  opacity: 0;
+  z-index: 0;
+}
+
+.nav-gradient-item::after {
+  top: 10px;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+.nav-gradient-item:hover::before {
+  opacity: 1;
+}
+
+.nav-gradient-item:hover::after {
+  opacity: 0.5;
+}
+
+/* === Link Styling === */
+.nav-link {
+  color: #777;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link ion-icon {
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+/* Icon shrink on hover */
+.nav-gradient-item:hover ion-icon {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
+}
+
+/* Text Label - Initially Hidden */
+.nav-text {
+  position: absolute;
+  color: white;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Text Reveal on Hover */
+.nav-gradient-item:hover .nav-text {
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  .nav-gradient-menu {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-gradient-item:hover {
+    width: 150px;
+  }
+
+  .nav-text {
+    font-size: 0.9em;
+  }
+
+  .nav-link {
+    font-size: 1.2em;
+  }
+
+  .nav-link ion-icon {
+    font-size: 1.3em;
+  }
+}

@@ -1,25 +1,32 @@
 {
-    "Projects":[
-        {
-            "id": 1,
-            "name": "XO-GAME-V1-p",
-            "description": "A simple game of tic-tac-toe",
-            "Tech": "HTML, CSS, JavaScript",
-            "url": "https://xo-game-v1-p.netlify.app/"
-        },
-        {
-            "id": 2,
-            "name": "To Do List",
-            "description": "A simple to do list",
-            "Tech": "React, CSS",
-            "url": "https://6776b28e97d6ea4795fb0c56--marvelous-mooncake-3eb234.netlify.app/"
-        },
-        {
-            "id": 3,
-            "name": "Simple Calculator",
-            "description": "A simple calculator",
-            "Tech": "HTML, CSS, JavaScript",
-            "url": ""
-        }
-    ]
+  "Projects": [
+    {
+      "id": 1,
+      "name": "Tetris_Game",
+      "description": "A modern Tetris game implemented using the MERN stack with a microservices architecture. Features responsive design, dynamic gameplay, and scalable backend services.",
+      "Tech": "MongoDB, Express.js, React.js, Node.js, Microservices, Netlify",
+      "url": "https://tetrisgamev.netlify.app/"
+    },
+    {
+      "id": 2,
+      "name": "XO Game V1",
+      "description": "A clean and interactive Tic-Tac-Toe game featuring simple logic and smooth UI animations, playable in the browser.",
+      "Tech": "HTML5, CSS3, Vanilla JavaScript",
+      "url": "https://xo-game-v1-p.netlify.app/"
+    },
+    {
+      "id": 3,
+      "name": "To-Do List",
+      "description": "A minimalist to-do list app built with React that allows users to add, mark, and remove tasks with ease. Fully responsive design.",
+      "Tech": "React.js, CSS3, JavaScript, Netlify",
+      "url": "https://6776b28e97d6ea4795fb0c56--marvelous-mooncake-3eb234.netlify.app/"
+    },
+    {
+      "id": 4,
+      "name": "Simple Calculator",
+      "description": "A basic yet functional web calculator supporting arithmetic operations, designed with clean UI and responsive layout.",
+      "Tech": "HTML5, CSS3, JavaScript",
+      "url": ""
+    }
+  ]
 }
