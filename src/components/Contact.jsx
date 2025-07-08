@@ -1,25 +1,44 @@
-// Contact.jsx
 import React, { useState } from "react";
 import "./assets/css/contact.css";
+import axios from "axios";
 
 function Contact() {
+  const [status, setStatus] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     rating: "5",
-    feedback: "",
+    message: "",
   });
-  const { name, email, rating, feedback } = formData;
+
+  const { name, email, rating, message } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your feedback!");
+    setStatus("Sending...");
+
+    try {
+      const res = await axios.post(
+        "https://portfolioserver-production-1952.up.railway.app/api/contact",
+        formData,
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      const data = res.data;
+      setStatus(data.message || data.error);
+      if (data.message) {
+        setFormData({ name: "", email: "", rating: "5", message: "" });
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("Something went wrong.");
+    }
   };
 
   return (
@@ -38,6 +57,7 @@ function Contact() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -50,6 +70,7 @@ function Contact() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="rating">Rating</label>
           <select
@@ -59,23 +80,28 @@ function Contact() {
             onChange={handleChange}
           >
             {[1, 2, 3, 4, 5].map((val) => (
-              <option key={val}>{val}</option>
+              <option key={val} value={val}>
+                {val}
+              </option>
             ))}
           </select>
         </div>
+
         <div className="form-group">
-          <label htmlFor="feedback">Suggestions/Feedback</label>
+          <label htmlFor="message">Suggestions/Feedback</label>
           <textarea
-            id="feedback"
-            name="feedback"
+            id="message"
+            name="message"
             rows="3"
-            value={feedback}
+            value={message}
             onChange={handleChange}
             placeholder="Let us know what you think..."
           ></textarea>
         </div>
+
         <div className="form-submit">
           <button type="submit">Submit</button>
+          {status && <p className="status-message">{status}</p>}
         </div>
       </form>
     </div>
