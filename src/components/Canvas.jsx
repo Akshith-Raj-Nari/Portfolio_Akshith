@@ -4,33 +4,59 @@ function Canvas() {
   const [brushColor, setBrushColor] = useState("#000000");
   const [brushSize, setBrushSize] = useState(5);
   const [isErasing, setIsErasing] = useState(false);
-  const isDrawing = useRef(false); // Use a ref to track drawing state
-  const canvasRef = useRef(null); // Use a ref for the canvas element
+  const isDrawing = useRef(false);
+  const canvasRef = useRef(null);
+
+  const getCoordinates = (event) => {
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+
+    if (event.nativeEvent.touches && event.nativeEvent.touches.length > 0) {
+      const touch = event.nativeEvent.touches[0];
+      return {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+      };
+    } else {
+      return {
+        x: event.nativeEvent.offsetX,
+        y: event.nativeEvent.offsetY,
+      };
+    }
+  };
 
   const startDrawing = (event) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    const { x, y } = getCoordinates(event);
     isDrawing.current = true;
     ctx.beginPath();
-    ctx.moveTo(event.nativeEvent.offsetX, event.nativeEvent.offsetY);
+    ctx.moveTo(x, y);
   };
 
   const stopDrawing = () => {
+    isDrawing.current = false;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    isDrawing.current = false;
     ctx.closePath();
   };
 
   const draw = (event) => {
     if (!isDrawing.current) return;
 
+    event.preventDefault(); // Prevent scrolling on touch
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    const { x, y } = getCoordinates(event);
+
+    ctx.lineCap = "round";
     ctx.strokeStyle = isErasing ? "#FFFFFF" : brushColor;
     ctx.lineWidth = brushSize;
-    ctx.lineTo(event.nativeEvent.offsetX, event.nativeEvent.offsetY);
+    ctx.lineTo(x, y);
     ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
   };
 
   const clearCanvas = () => {
@@ -80,11 +106,16 @@ function Canvas() {
           border: "1px solid black",
           cursor: "crosshair",
           backgroundColor: "white",
+          touchAction: "none", // Prevent scrolling on touch
         }}
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
         onMouseMove={draw}
-      ></canvas>
+        onMouseLeave={stopDrawing}
+        onTouchStart={startDrawing}
+        onTouchMove={draw}
+        onTouchEnd={stopDrawing}
+      />
     </div>
   );
 }
