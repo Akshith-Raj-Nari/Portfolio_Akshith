@@ -133,11 +133,12 @@
 }
 
 /* === Responsive Tweaks === */
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .nav-gradient-menu {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: start;
   }
 
   .nav-gradient-item:hover {

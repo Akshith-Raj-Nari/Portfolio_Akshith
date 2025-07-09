@@ -104,10 +104,12 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .contact-card {
     padding: 20px;
-    margin: 20px;
+    margin: 50px auto;
+    height: 500px;
+    width: 335px !important;
   }
 
   .contact-title {
