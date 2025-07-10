@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useEffect } from "react";
 
 function Canvas() {
   const [brushColor, setBrushColor] = useState("#000000");
@@ -44,7 +45,7 @@ function Canvas() {
   const draw = (event) => {
     if (!isDrawing.current) return;
 
-    event.preventDefault(); // Prevent scrolling on touch
+    // event.preventDefault(); // Prevent scrolling on touch
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -64,6 +65,30 @@ function Canvas() {
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   };
+
+  // Responsive canvas logic
+
+  // Set the desired aspect ratio (e.g., 3:2 for 600x400)
+  const ASPECT_RATIO = 3 / 2;
+
+  useEffect(() => {
+    const resizeCanvas = () => {
+      const container = canvasRef.current.parentElement;
+      if (!container) return;
+      // Set width to 100% of container, height by aspect ratio
+      const width = Math.min(container.offsetWidth, 800); // max width
+      const height = width / ASPECT_RATIO;
+      const canvas = canvasRef.current;
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    return () => window.removeEventListener("resize", resizeCanvas);
+  }, []);
 
   return (
     <div>
@@ -98,24 +123,27 @@ function Canvas() {
           Clear
         </button>
       </div>
-      <canvas
-        ref={canvasRef}
-        width="800"
-        height="400"
-        style={{
-          border: "1px solid black",
-          cursor: "crosshair",
-          backgroundColor: "white",
-          touchAction: "none", // Prevent scrolling on touch
-        }}
-        onMouseDown={startDrawing}
-        onMouseUp={stopDrawing}
-        onMouseMove={draw}
-        onMouseLeave={stopDrawing}
-        onTouchStart={startDrawing}
-        onTouchMove={draw}
-        onTouchEnd={stopDrawing}
-      />
+      <div style={{ width: "100%", maxWidth: 800 }}>
+        <canvas
+          ref={canvasRef}
+          style={{
+            border: "1px solid black",
+            width: "100%",
+            height: "auto",
+            cursor: "crosshair",
+            backgroundColor: "white",
+            display: "block",
+            touchAction: "none",
+          }}
+          onMouseDown={startDrawing}
+          onMouseUp={stopDrawing}
+          onMouseMove={draw}
+          onMouseLeave={stopDrawing}
+          onTouchStart={startDrawing}
+          onTouchMove={draw}
+          onTouchEnd={stopDrawing}
+        />
+      </div>
     </div>
   );
 }
