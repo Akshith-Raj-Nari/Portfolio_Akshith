@@ -2,27 +2,34 @@
   "Projects": [
     {
       "id": 1,
+      "name": "Auto Consultant App",
+      "description": "Created a MERN-powered finance management system to register customers, calculate EMIs, update records, and store photos. Delivered a smooth user experience with React and Node/Express-backed business logic.",
+      "Tech": "MongoDB, Express.js, React.js, Node.js, Microservices, Hostinger vps, Domain, Vercel",
+      "url": "https://auto-consultant-app.vercel.app/"
+    },
+    {
+      "id": 2,
       "name": "Tetris_Game",
       "description": "A modern Tetris game implemented using the MERN stack with a microservices architecture. Features responsive design, dynamic gameplay, and scalable backend services.",
       "Tech": "MongoDB, Express.js, React.js, Node.js, Microservices, Netlify",
       "url": "https://tetrisgamev.netlify.app/"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "XO Game V1",
       "description": "A clean and interactive Tic-Tac-Toe game featuring simple logic and smooth UI animations, playable in the browser.",
       "Tech": "HTML5, CSS3, Vanilla JavaScript",
       "url": "https://xo-game-v1-p.netlify.app/"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "To-Do List",
       "description": "A minimalist to-do list app built with React that allows users to add, mark, and remove tasks with ease. Fully responsive design.",
       "Tech": "React.js, CSS3, JavaScript, Netlify",
       "url": "https://6776b28e97d6ea4795fb0c56--marvelous-mooncake-3eb234.netlify.app/"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Simple Calculator",
       "description": "A basic yet functional web calculator supporting arithmetic operations, designed with clean UI and responsive layout.",
       "Tech": "HTML5, CSS3, JavaScript",

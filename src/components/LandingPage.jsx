@@ -31,7 +31,7 @@ function LandingPage() {
       />
       <h1 className="display-2 hidden">Hi! This is Akshith Raj Nari</h1>
       <h2 className="display-6 hidden">
-        Intern at Accenture | Web Developer | Software Developer
+        Accenture | Web Developer | Software Developer
       </h2>
     </div>
   );

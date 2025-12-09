@@ -4,6 +4,8 @@ import axios from "axios";
 
 function Contact() {
   const [status, setStatus] = useState("");
+  // Use import.meta.env for Vite, process.env for CRA
+  const host_key = import.meta.env.VITE_host_key;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +27,7 @@ function Contact() {
 
     try {
       const res = await axios.post(
-        "https://portfolioserver-production-1952.up.railway.app/api/contact",
+        `https://portfolioserver-production-1952.up.railway.app/api/contact`,
         formData,
         { headers: { "Content-Type": "application/json" } }
       );

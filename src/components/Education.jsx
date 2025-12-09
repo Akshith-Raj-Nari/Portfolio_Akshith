@@ -26,7 +26,7 @@ function Education() {
               <h3 className="text-primary">CMR Engineering College</h3>
               <h5>Bachelor of Technology in Computer Science</h5>
               <p>2021-2025</p>
-              <p>CGPA: 8.5</p>
+              <p>CGPA: 7.53</p>
             </div>
           </div>
           <div className="carousel-item">
